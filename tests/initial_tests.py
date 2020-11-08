@@ -34,3 +34,12 @@ def test_hello_world_two_query_outcomes_are_not_the_same():
 
         pd.testing.assert_frame_equal(df1,df2)
 
+def test_hello_world_foo():
+    query_source='select company,SUM(Salary) from public.Employee group by company'
+    query_target='select company,SUM(Salary) from public.Employee group by company'
+    dq = DataQuality(query_source,query_target)
+
+    df1=dq.run_source_query()
+    df2=dq.run_target_query()
+
+    pd.testing.assert_frame_equal(df1,df2)

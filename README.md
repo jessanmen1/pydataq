@@ -22,3 +22,19 @@ In order to set up your first pydataq test, it is recommended to run two docker 
 3. `docker run -d --name pydataq02 -v pydataq02:/var/lib/postgresql/data -e POSTGRES_PASSWORD=<your_pass> -p <another_port>:5432 postgres`
 
 Now you're good to start writing tests!
+
+In order to run these tests using the docker images just follow these instructions.
+
+### If you are using vscode
+1. Create a file named ".env" in the root of your project directory
+2. Add the following two lines to this file:
+    ```
+    SOURCE_CONN=postgresql://<user>:<pass>@localhost:<port>/<dbname>
+    TARGET_CONN=postgresql://<user>:<pass>@localhost:<port>/<dbname>
+    ```
+4. Open the file .vscode/settings.json and and this following line `"python.envFile": "${workspaceFolder}/.env"`
+3. Run the tests using the vscode test runner
+
+### If you are using bash
+1. Exporting the environment variables should do the trick
+2. The go to the project root directory and run "pytest"
