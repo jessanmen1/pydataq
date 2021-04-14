@@ -17,4 +17,4 @@ class DataQuality(object):
     
     def run_target_query(self):
         return pd.read_sql_query(self.target_query,self.target_conn)
-
+sssss
