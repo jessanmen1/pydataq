@@ -1,0 +1,4 @@
+comment: 'Could you please add tests to make sure this change works as expected?',
+fileExtensions: ['.py',]
+testDir: 'tests'
+testPattern: '*_tests.py'

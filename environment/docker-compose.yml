@@ -6,7 +6,7 @@ services:
         ports:
             - "5432:5432"
         volumes: 
-            - ./pydataq01:/var/lib/postgresql/data
+            - ~/pydataq01:/var/lib/postgresql/data
             - ../sample_dataset/dataset.sql:/docker-entrypoint-initdb.d/init.sql
         environment: 
             - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
@@ -16,7 +16,7 @@ services:
         ports:
             - "5433:5432"
         volumes: 
-            - ./pydataq02:/var/lib/postgresql/data
+            - ~/pydataq02:/var/lib/postgresql/data
             - ../sample_dataset/dataset.sql:/docker-entrypoint-initdb.d/init.sql
         environment: 
             - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
